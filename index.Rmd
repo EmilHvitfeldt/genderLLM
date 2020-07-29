@@ -1,0 +1,99 @@
+---
+output:
+  html_document
+---
+
+```{js, echo=FALSE}
+function unhide() {
+    var hid = document.getElementsByClassName("exp");
+    // Emulates jQuery $(element).is(':hidden');
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+}
+```
+
+
+```{css, echo=FALSE}
+.exp{visibility: hidden;}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+.box {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.btn {
+  height: 40px;
+  padding-top: 0px;
+}
+
+.header{
+  margin-top:50px;
+}
+
+#search-field{
+  width:500px;
+  height:40px;
+}
+
+.wikipage{
+  margin-top:10px;
+  margin-bottom:10px;
+  border:solid 1px black;
+}
+
+a:hover{
+  text-decoration:none;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+```
+
+```{r, echo=FALSE}
+library(htmltools)
+library(fontawesome)
+
+withTags(
+  div(class = "header text-center",
+      h1(fa(name = "mars", fill = "#89CFF0"), 
+         "Genderify Pro",
+         fa(name = "venus", fill = "#F7CAE0")),
+      h2("Identify the gender of your customers"),
+      h3("Guaranteed to give the correct answer everytime. No bias. No account needed. Always free."),
+      div(id = "search", class = "text-center box",
+          input(type = "text", id = "search-field", placeholder = "Name / occupation"),
+          button(class = "btn btn-primary", id = "btn-search", onclick = "unhide()",
+                 span("Check")
+                 )
+          ),
+      div(class = "exp",
+          p("if it is important to know someone's gender, ", b("ask them")),
+          p("assigning genders is inherently ", b("inaccurate")),
+          p(b("consider the impact"), " on individuals for whom your assumptions are wrong"))
+      )
+)
+
+withTags(
+  div(class = "footer", 
+      p("© Emil Hvitfeldt 2020 - ", 
+        a(href = "https://twitter.com/Emil_Hvitfeldt", 
+          fa(name = "twitter", fill = "#1D8DEF"), "Emil_Hvitfeldt")))
+)
+```
+
