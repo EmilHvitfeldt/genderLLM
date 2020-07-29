@@ -75,7 +75,7 @@ withTags(
          "Genderify Pro",
          fa(name = "venus", fill = "#F7CAE0")),
       h2("Identify the gender of your customers"),
-      h3("Guaranteed to give the correct answer everytime. No bias. No account needed. Always free."),
+      h3("Guaranteed to give the correct answer every time. No bias. No account needed. Always free."),
       div(id = "search", class = "text-center box",
           input(type = "text", id = "search-field", placeholder = "Name / occupation"),
           button(class = "btn btn-primary", id = "btn-search", onclick = "unhide()",
@@ -93,7 +93,10 @@ withTags(
   div(class = "footer", 
       p("© Emil Hvitfeldt 2020 - ", 
         a(href = "https://twitter.com/Emil_Hvitfeldt", 
-          fa(name = "twitter", fill = "#1D8DEF"), "Emil_Hvitfeldt")))
+          fa(name = "twitter", fill = "#1D8DEF"), "Emil_Hvitfeldt"),
+        " - ",
+        a(href = "https://github.com/EmilHvitfeldt/genderify", 
+          fa(name = "github"), "source code")))
 )
 ```
 
