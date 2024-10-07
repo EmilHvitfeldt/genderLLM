@@ -1,0 +1,160 @@
+---
+output: html_document
+---
+
+```{js, echo=FALSE}
+function unhide() {
+    var hid = document.getElementsByClassName("exp");
+    // Emulates jQuery $(element).is(':hidden');
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+}
+```
+
+```{css, echo=FALSE}
+@import url('https://fonts.googleapis.com/css2?family=Sanchez:ital@0;1&display=swap');
+
+html *{
+  font-family: "Sanchez", serif;
+}
+
+body {
+  background: rgb(150, 169, 190);
+background: linear-gradient(117deg, rgba(196,224,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(255,197,231,1) 100%);
+}
+
+.content {
+  margin-top: 10em;
+  border-radius: 59px;
+background: #fbfbfb;
+box-shadow:  30px 30px 52px rgba(196,224,255,0.2),
+             -30px -30px 52px rgba(255,197,231,0.5);
+}
+
+.exp {
+  visibility: hidden;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+.box {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.button {
+  border-radius: 5px;
+background: #ffffff;
+box-shadow:  7px 7px 15px #d9d9d9,
+             -7px -7px 15px #ffffff;
+  border: unset;
+  height: 3em;
+  width: 5em;
+}
+
+.header {
+  margin-top:50px;
+}
+
+#search-field {
+  width: 500px;
+  height: 3em;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #fcfcfc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+}
+
+#search-field:focus {
+  background-color: white;
+  transform: scale(1.01);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+#search-field::placeholder {
+   text-align: center; 
+}
+
+a {
+  color: rgb(28, 88, 157);
+}
+
+a:hover {
+  text-decoration:none;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+```
+
+```{r, echo=FALSE}
+library(htmltools)
+library(fontawesome)
+
+withTags(
+  div(
+    class = "header text-center",
+    h1(
+      fa(name = "mars", fill = "#89CFF0"), 
+      "genderLLM",
+      fa(name = "venus", fill = "#F7CAE0")
+    ),
+    h2("Identify the gender of your customers"),
+    h3("Guaranteed to give the correct answer every time. No bias. No account needed. Always free."),
+    div(
+      id = "search", 
+      class = "text-center box",
+      input(type = "text", id = "search-field", placeholder = "Name / occupation"),
+      button(
+        class = "button",
+        onclick = "unhide()",
+        span("Check")
+      )
+    ),
+    div(
+      class = "exp",
+      p("if it is important to know someone's gender, ", i("ask them")),
+      p("assigning genders is inherently ", i("inaccurate")),
+      p(i("consider the impact"), " on individuals for whom your assumptions are wrong")
+    )
+  )
+)
+
+withTags(
+  div(
+    class = "footer", 
+    p(
+      "© Emil Hvitfeldt 2024 - ", 
+      a(
+        href = "https://www.linkedin.com/in/emilhvitfeldt/", 
+        fa(name = "linkedin"),
+        "Emil_Hvitfeldt"
+      ),
+      " - ",
+      a(
+        href = "https://github.com/EmilHvitfeldt/genderLLM", 
+        fa(name = "github"), 
+        "source code"
+      )
+    )
+  )
+)
+```
