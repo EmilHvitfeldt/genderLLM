@@ -106,10 +106,6 @@ box-shadow:  7px 7px 15px #d9d9d9,
   width: 5em;
 }
 
-.header {
-  margin-top:50px;
-}
-
 #search-field {
   width: 500px;
   height: 3em;
@@ -149,11 +145,17 @@ a:hover {
   padding: 1rem;
   text-align: center;
 }
+
+@media (max-width: 768px){
+  .footer {
+    display: none;
+  }
+}
 </style>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="header text-center">
+<div class="text-center">
 <h1>
 <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#89CFF0;overflow:visible;position:relative;"><path d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"></path></svg>
 genderLLM

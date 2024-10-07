@@ -62,10 +62,6 @@ box-shadow:  7px 7px 15px #d9d9d9,
   width: 5em;
 }
 
-.header {
-  margin-top:50px;
-}
-
 #search-field {
   width: 500px;
   height: 3em;
@@ -105,6 +101,12 @@ a:hover {
   padding: 1rem;
   text-align: center;
 }
+
+@media (max-width: 768px){
+  .footer {
+    display: none;
+  }
+}
 ```
 
 ```{r, echo=FALSE}
@@ -113,7 +115,7 @@ library(fontawesome)
 
 withTags(
   div(
-    class = "header text-center",
+    class = "text-center",
     h1(
       fa(name = "mars", fill = "#89CFF0"), 
       "genderLLM",
