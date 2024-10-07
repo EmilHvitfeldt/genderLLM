@@ -1,4 +1,6 @@
 ---
+pagetitle: "genderLLM"
+image: "preview.png"
 output: html_document
 ---
 
