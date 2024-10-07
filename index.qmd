@@ -63,7 +63,7 @@ box-shadow:  7px 7px 15px #d9d9d9,
 }
 
 #search-field {
-  width: 500px;
+  width: 60%;
   height: 3em;
   border: none;
   outline: none;
